@@ -1,0 +1,19 @@
+name: Test RAGHA Build+GitHub Actions
+on:
+  push:
+    branches:
+      - 'test-master'
+    paths:
+      - 'includeme/**'
+      - 'ignoreme/**'
+
+jobs:
+  test:
+    name: Check build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hello
+        run: echo Hello, world.
+        shell: bash
