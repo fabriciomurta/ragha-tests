@@ -18,3 +18,5 @@ jobs:
       - uses: fabriciomurta/ragha-build@v1
 
       - uses: fabriciomurta/ragha-github@v1
+        with:
+          directory: docs
