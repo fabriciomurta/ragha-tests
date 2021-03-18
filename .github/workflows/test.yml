@@ -1,4 +1,4 @@
-name: Test RAGHA Build Action
+name: Test RAGHA Build+GitHub Actions
 on:
   workflow_dispatch:
 
