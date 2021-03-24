@@ -2,11 +2,6 @@
 
 dest="$(echo "${@}" | egrep "\"output\":" | cut -f4 -d\")"
 
-if [ -z "${dest}" ]; then
- echo "Ops, no dest. :S"
- exit 1
-fi
-
 function dumparr() {
  for i in "${@}"; do
   echo -n " [\"${i}\"]"
@@ -23,7 +18,10 @@ fi
 
 echo "${result}"
 
-if [ "${1}" == "init" ]; then
+if [ -z "${dest}" ]; then
+ echo "Ops, no dest. :S"
+ exit 1
+elif [ "${1}" == "init" ]; then
  echo "Creating fake retype.json file"
  echo "fake retype.json file with fake data.
 ${result}" > "./retype.json"
