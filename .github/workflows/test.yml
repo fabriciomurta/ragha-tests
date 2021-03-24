@@ -19,6 +19,7 @@ jobs:
         run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
       - uses: fabriciomurta/ragha-build@issue-1
+        id: build1
 
       - uses: actions/upload-artifact@v2
         with:
