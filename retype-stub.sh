@@ -14,6 +14,7 @@ $(dumparr "${@}")
 
 if [ "${1}" == "--version" ]; then
  echo "1.2.0"
+ exit 0
 fi
 
 echo "${result}"
