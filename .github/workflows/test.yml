@@ -18,10 +18,11 @@ jobs:
       - shell: bash
         run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
-      - uses: fabriciomurta/ragha-build@issue-1
+      - uses: fabriciomurta/ragha-build@issue-3
         with:
           project-name: "Coo\"lPr'oj"
           base: "ragha-test"
+          license: ${{ secrets.RETYPE_LICENSE_KEY }}
         id: build1
 
       - uses: actions/upload-artifact@v2
