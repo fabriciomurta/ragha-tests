@@ -28,11 +28,13 @@ elif [ -z "${dest}" ]; then
  exit 1
 elif [ "${1}" == "build" ]; then
  echo "Fake-building something."
- if [ ! -d "${dest}" ]; then
-  mkdir -p "${dest}" || exit 1
+ if [ ! -d "${dest}/resources/js" ]; then
+  mkdir -p "${dest}/resources/js" || exit 1
  fi
- echo "fake index.html
-${result}" > "${dest}/index.html"
+ for file in resources/js/config.js resources/js/retype.js index.html; do
+  echo "fake ${file}
+${result}" > "${dest}/${file}"
+ done
 else
  echo "invalid command: ${1}"
  exit 1
