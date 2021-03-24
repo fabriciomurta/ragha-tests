@@ -19,13 +19,13 @@ fi
 
 echo "${result}"
 
-if [ -z "${dest}" ]; then
- echo "Ops, no dest. :S"
- exit 1
-elif [ "${1}" == "init" ]; then
+if [ "${1}" == "init" ]; then
  echo "Creating fake retype.json file"
  echo "fake retype.json file with fake data.
 ${result}" > "./retype.json"
+elif [ -z "${dest}" ]; then
+ echo "Ops, no dest. :S"
+ exit 1
 elif [ "${1}" == "build" ]; then
  echo "Fake-building something."
  if [ ! -d "${dest}" ]; then
