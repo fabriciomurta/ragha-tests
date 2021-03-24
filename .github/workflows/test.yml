@@ -19,6 +19,9 @@ jobs:
         run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
       - uses: fabriciomurta/ragha-build@issue-1
+        with:
+          project-name: "CoolProj"
+          base: "ragha-test"
         id: build1
 
       - uses: actions/upload-artifact@v2
