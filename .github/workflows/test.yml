@@ -15,8 +15,11 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - uses: fabriciomurta/ragha-build@v1
+      - shell: bash
+        run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
-      - uses: fabriciomurta/ragha-github@v1
+      - uses: fabriciomurta/ragha-build@issue-1
+
+      - uses: actions/upload-artifact@v2
         with:
-          directory: docs
+          path: ${{ steps.build1.outputs.retype-output-root }}
