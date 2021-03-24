@@ -20,7 +20,7 @@ jobs:
 
       - uses: fabriciomurta/ragha-build@issue-1
         with:
-          project-name: "CoolProj"
+          project-name: "Coo\"lPr'oj"
           base: "ragha-test"
         id: build1
 
