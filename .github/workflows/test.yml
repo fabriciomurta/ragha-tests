@@ -18,13 +18,15 @@ jobs:
       - shell: bash
         run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
-      - uses: fabriciomurta/ragha-build@issue-3
+      - uses: fabriciomurta/ragha-build@v1.2
         with:
           project-name: "Coo\"lPr'oj"
           base: "ragha-test"
           license: ${{ secrets.RETYPE_LICENSE_KEY }}
         id: build1
 
-      - uses: actions/upload-artifact@v2
+      - uses: fabriciomurta/ragha-github@vDir
         with:
-          path: ${{ steps.build1.outputs.retype-output-root }}
+          branch: gh-subpages
+          directory: docs
+          github-token: ${{ secrets.GITHUB_TOKEN }}
