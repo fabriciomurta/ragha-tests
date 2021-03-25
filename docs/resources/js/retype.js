@@ -1,7 +1,7 @@
 fake resources/js/retype.js
 - Commandline arguments:
  ["build"] ["--verbose"] ["--override"] ["{
-  "output": "/tmp/tmp.VbuAY539ny",
+  "output": "/tmp/tmp.rk8qVzedSz",
   "base": "ragha-test",
   "title": "Coo\"lPr'oj",
   "license": "Retype_Super Secret\n\nLicense key here! \"I like license keys\" \\:D\n\nWith crazy line breaks etcetera. And all! Oh my, oh my! :P\\"
