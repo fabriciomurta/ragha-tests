@@ -4,7 +4,7 @@ on:
 
 jobs:
   test:
-    name: Check build
+    name: Check ragha-github for new branch without pr
 
     runs-on: ubuntu-latest
 
@@ -29,4 +29,3 @@ jobs:
         with:
           branch: gh-subpages
           directory: docs
-          github-token: ${{ secrets.GITHUB_TOKEN }}
