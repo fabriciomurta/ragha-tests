@@ -18,10 +18,15 @@ jobs:
       #- shell: bash
       #  run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
+      - name: Sets a variable with the repository name, stripping out owner/organization
+        id: clean-repo-name
+        shell: bash
+        run: echo "::set-output name=repository_name::${GITHUB_REPOSITORY#${{ github.repository_owner }}/}"
+
       - uses: fabriciomurta/ragha-build@v1
         with:
           title: "Coo\"lPr'oj"
-          base: "ragha-test"
+          base: "${{ steps.clean-repo-name.outputs.repository_name }}"
         id: build1
 
       - uses: fabriciomurta/ragha-github@v1
