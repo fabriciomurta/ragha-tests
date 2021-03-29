@@ -15,8 +15,8 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - shell: bash
-        run: sudo cp -p retype-stub.sh /usr/local/bin/retype
+      #- shell: bash
+      #  run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
       - uses: fabriciomurta/ragha-build@v1
         with:
