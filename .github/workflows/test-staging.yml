@@ -27,6 +27,7 @@ jobs:
         with:
           title: "Coo\"lSt'aj"
           base: "${{ steps.clean-repo-name.outputs.repository_name }}"
+          license: some-test-license
         id: build1
 
       - uses: fabriciomurta/ragha-github@v1
