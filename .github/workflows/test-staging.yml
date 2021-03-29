@@ -15,8 +15,8 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - shell: bash
-        run: sudo cp -p retype-stub.sh /usr/local/bin/retype
+      #- shell: bash
+      #  run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
       - name: Sets a variable with the repository name, stripping out owner/organization
         id: clean-repo-name
@@ -27,7 +27,7 @@ jobs:
         with:
           title: "Coo\"lSt'aj"
           base: "${{ steps.clean-repo-name.outputs.repository_name }}"
-          license: some-test-license
+          #license: some-test-license
         id: build1
 
       - uses: fabriciomurta/ragha-github@v1
