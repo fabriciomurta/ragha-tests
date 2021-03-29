@@ -1,10 +1,10 @@
-name: Test Retypeapp/* GitHub actions
+name: Test RAGHA Build+GitHub staging Actions
 on:
   workflow_dispatch:
 
 jobs:
   test:
-    name: Check Action for build+github-pages run at v1 tag.
+    name: Check RAGHA Action for build+github-pages @v1.
 
     runs-on: ubuntu-latest
 
@@ -18,14 +18,15 @@ jobs:
       - shell: bash
         run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
-      - uses: retypeapp/action-build@v1
+      - uses: fabriciomurta/ragha-build@v1
         with:
           title: "Coo\"lPr'oj"
           base: "ragha-test"
         id: build1
 
-      - uses: retypeapp/action-github-pages@v1
+      - uses: fabriciomurta/ragha-github@v1
         with:
           branch: gh-pages
+          directory: docs
           update-branch: true
-          github-token: ${{ secrets.GITHUB_TOKEN }} # used only if update-branch is not true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
