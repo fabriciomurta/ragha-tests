@@ -15,8 +15,8 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      #- shell: bash
-      #  run: sudo cp -p retype-stub.sh /usr/local/bin/retype
+      - shell: bash
+        run: sudo cp -p retype-stub.sh /usr/local/bin/retype
 
       - name: Sets a variable with the repository name, stripping out owner/organization
         id: clean-repo-name
