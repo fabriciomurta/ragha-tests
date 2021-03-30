@@ -24,11 +24,17 @@ jobs:
         run: echo "::set-output name=repository_name::${GITHUB_REPOSITORY#${{ github.repository_owner }}/}"
 
       - uses: fabriciomurta/ragha-build@v1
+        id: ragha-build
         with:
           title: "Coo\"lSt'aj"
           base: "${{ steps.clean-repo-name.outputs.repository_name }}"
           #license: some-test-license
         id: build1
+
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ${{ steps.ragha-build.outputs.retype-output-root }}
+          retention-days: 1
 
       - uses: fabriciomurta/ragha-github@v1
         with:
