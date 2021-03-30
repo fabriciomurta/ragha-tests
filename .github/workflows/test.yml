@@ -26,14 +26,14 @@ jobs:
           echo "::set-output name=repository_name::${GITHUB_REPOSITORY#${{ github.repository_owner }}/}"
 
       - uses: retypeapp/action-build@v1
+        id: retypeapp-action-build
         with:
           title: "Coo\"lPr'oj"
           base: "${{ steps.clean-repo-name.outputs.repository_name }}"
-        id: build1
 
       - uses: actions/upload-artifact@v2
         with:
-          path: ${{ steps.ragha-build.outputs.retype-output-path }}
+          path: ${{ steps.retypeapp-action-build.outputs.retype-output-path }}
           retention-days: 1
 
       - uses: retypeapp/action-github-pages@v1

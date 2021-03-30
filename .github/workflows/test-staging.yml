@@ -31,11 +31,10 @@ jobs:
           title: "Coo\"lSt'aj"
           base: "${{ steps.clean-repo-name.outputs.repository_name }}"
           #license: some-test-license
-        id: build1
 
       - shell: bash
         env:
-          MY_ENV_TO_RETYPE_PATH: ${{ steps.build1.outputs.retype-output-path }}
+          MY_ENV_TO_RETYPE_PATH: ${{ steps.ragha-build.outputs.retype-output-path }}
         run: echo "Retype output is available at '${MY_ENV_TO_RETYPE_PATH}'."
 
       - uses: actions/upload-artifact@v2
