@@ -40,7 +40,7 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          path: ${{ steps.ragha-build.outputs.retype-output-root }}
+          path: ${{ steps.ragha-build.outputs.retype-output-path }}
           retention-days: 1
 
       - uses: fabriciomurta/ragha-github@v1
