@@ -88,7 +88,7 @@ jobs:
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 1.1: Documentation from test1/ dir path-based'
         with:
-          path: test1/retype.json
+          retypejson-path: test1/retype.json
           base: ragha-build/test1.1
 
       - uses: fabriciomurta/ragha-github@master
@@ -117,7 +117,7 @@ jobs:
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 2.0.1: Documentation from test2/ dir path-based'
         with:
-          path: test2/retype.json
+          retypejson-path: test2/retype.json
           base: ragha-build/test2.0.1
 
       - uses: fabriciomurta/ragha-github@master
@@ -145,7 +145,7 @@ jobs:
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 2.1.1: Documentation from test1/ dir path-based'
         with:
-          path: test2/test21/retype.json
+          retypejson-path: test2/test21/retype.json
           base: ragha-build/test2.1.1
 
       - uses: fabriciomurta/ragha-github@master
@@ -174,7 +174,7 @@ jobs:
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 3.1: Documentation from test1/ dir path-based'
         with:
-          path: test3/retype.json
+          retypejson-path: test3/retype.json
           base: ragha-build/test3.1
 
       - uses: fabriciomurta/ragha-github@master
