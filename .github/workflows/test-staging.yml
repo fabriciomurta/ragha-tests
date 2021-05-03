@@ -62,7 +62,7 @@ jobs:
       - uses: fabriciomurta/ragha-build@issue-2
         name: Push root with tests directory + test docs all-in-one
         with:
-          base: ragha-build
+          base: ragha-tests
       - uses: fabriciomurta/ragha-github@master
         with:
           update-branch: true
@@ -75,7 +75,7 @@ jobs:
         name: 'Test 1.0: Documentation from test1/ dir wd-based'
         with:
           wd: test1
-          base: ragha-build/test1.0
+          base: ragha-tests/test1.0
 
       - uses: fabriciomurta/ragha-github@master
         with:
@@ -89,7 +89,7 @@ jobs:
         name: 'Test 1.1: Documentation from test1/ dir path-based'
         with:
           retypejson-path: test1/retype.json
-          base: ragha-build/test1.1
+          base: ragha-tests/test1.1
 
       - uses: fabriciomurta/ragha-github@master
         with:
@@ -104,7 +104,7 @@ jobs:
         name: 'Test 2.0.0: Documentation from test2/ dir wd-based'
         with:
           wd: test2
-          base: ragha-build/test2.0.0
+          base: ragha-tests/test2.0.0
 
       - uses: fabriciomurta/ragha-github@master
         with:
@@ -118,7 +118,7 @@ jobs:
         name: 'Test 2.0.1: Documentation from test2/ dir path-based'
         with:
           retypejson-path: test2/retype.json
-          base: ragha-build/test2.0.1
+          base: ragha-tests/test2.0.1
 
       - uses: fabriciomurta/ragha-github@master
         with:
@@ -132,7 +132,7 @@ jobs:
         name: 'Test 2.1.0: Documentation from test2/test21/ dir wd-based'
         with:
           wd: test2/test21
-          base: ragha-build/test2.1.0
+          base: ragha-tests/test2.1.0
 
       - uses: fabriciomurta/ragha-github@master
         with:
@@ -146,7 +146,7 @@ jobs:
         name: 'Test 2.1.1: Documentation from test1/ dir path-based'
         with:
           retypejson-path: test2/test21/retype.json
-          base: ragha-build/test2.1.1
+          base: ragha-tests/test2.1.1
 
       - uses: fabriciomurta/ragha-github@master
         with:
@@ -161,7 +161,7 @@ jobs:
         name: 'Test 3.0: Documentation from test1/ dir wd-based'
         with:
           wd: test3
-          base: ragha-build/test3.0
+          base: ragha-tests/test3.0
 
       - uses: fabriciomurta/ragha-github@master
         with:
@@ -175,7 +175,7 @@ jobs:
         name: 'Test 3.1: Documentation from test1/ dir path-based'
         with:
           retypejson-path: test3/retype.json
-          base: ragha-build/test3.1
+          base: ragha-tests/test3.1
 
       - uses: fabriciomurta/ragha-github@master
         with:
