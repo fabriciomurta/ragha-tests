@@ -48,3 +48,102 @@ jobs:
           #directory: docs
           update-branch: true
           #github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  test-issue-2:
+    name: Checks issue-2 (wd/retypejson-path)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: Push root with tests directory + test docs all-in-one
+        with:
+          base: ragha-build
+      - uses: fabriciomurta/ragha-github@master
+
+# 1
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 1.0: Documentation from test1/ dir wd-based'
+        with:
+          wd: test1
+          base: ragha-build/test1.0
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test1.0
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 1.1: Documentation from test1/ dir path-based'
+        with:
+          path: test1/retype.json
+          base: ragha-build/test1.1
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test1.1
+
+# 2
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.0.0: Documentation from test2/ dir wd-based'
+        with:
+          wd: test2
+          base: ragha-build/test2.0.0
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.0.0
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.0.1: Documentation from test2/ dir path-based'
+        with:
+          path: test2/retype.json
+          base: ragha-build/test2.0.1
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.0.1
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.1.0: Documentation from test2/test21/ dir wd-based'
+        with:
+          wd: test2/test21
+          base: ragha-build/test2.1.0
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.1.0
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.1.1: Documentation from test1/ dir path-based'
+        with:
+          path: test2/test21/retype.json
+          base: ragha-build/test2.1.1
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.1.1
+
+# 3
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 3.0: Documentation from test1/ dir wd-based'
+        with:
+          wd: test3
+          base: ragha-build/test3.0
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test3.0
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 3.1: Documentation from test1/ dir path-based'
+        with:
+          path: test3/retype.json
+          base: ragha-build/test3.1
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test3.1

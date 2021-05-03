@@ -1,0 +1,23 @@
+{
+  "input": "./",
+  "output": ".retype",
+
+  "meta": {
+    "title": "Test 002"
+  },
+
+  "links": [{
+    "text": "Tests directory",
+    "link": "../"
+  }],
+
+  "footer": {
+    "copyright": "No-copyright-message",
+    "links": [
+      {
+        "text": "Tests Directory",
+        "link": "../"
+      }
+    ]
+  }
+}
