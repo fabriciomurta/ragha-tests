@@ -64,6 +64,11 @@ jobs:
         with:
           base: ragha-build
       - uses: fabriciomurta/ragha-github@master
+        with:
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
 # 1
       - uses: fabriciomurta/ragha-build@issue-2
@@ -75,6 +80,10 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test1.0
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 1.1: Documentation from test1/ dir path-based'
@@ -85,6 +94,10 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test1.1
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
 # 2
       - uses: fabriciomurta/ragha-build@issue-2
@@ -96,6 +109,10 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test2.0.0
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 2.0.1: Documentation from test2/ dir path-based'
@@ -106,6 +123,10 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test2.0.1
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 2.1.0: Documentation from test2/test21/ dir wd-based'
@@ -116,6 +137,10 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test2.1.0
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 2.1.1: Documentation from test1/ dir path-based'
@@ -126,6 +151,10 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test2.1.1
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
 # 3
       - uses: fabriciomurta/ragha-build@issue-2
@@ -137,6 +166,10 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test3.0
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
         name: 'Test 3.1: Documentation from test1/ dir path-based'
@@ -147,3 +180,4 @@ jobs:
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test3.1
+          update-branch: true
