@@ -15,12 +15,6 @@
   }],
 
   "footer": {
-    "copyright": "No-copyright-message",
-    "links": [
-      {
-        "text": "Tests Directory",
-        "link": "../"
-      }
-    ]
+    "copyright": "No-copyright-message"
   }
 }
