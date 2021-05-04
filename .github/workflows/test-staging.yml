@@ -181,3 +181,19 @@ jobs:
         with:
           directory: test3.1
           update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+# 4
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 4.0: Documentation from test4/ dir wd-based'
+        with:
+          wd: test4
+          base: ragha-tests/test4.0
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test4.0
+          retypejson-path: test41/retype.json # change this to just 'test41', reference config by directory
+          update-branch: true

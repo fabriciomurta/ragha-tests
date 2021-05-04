@@ -1,0 +1,23 @@
+{
+  "input": "test41",
+  "output": ".retype",
+
+  "meta": {
+    "title": "Test 4"
+  },
+
+  "links": [{
+    "text": "Tests directory",
+    "link": "../"
+  }],
+
+  "footer": {
+    "copyright": "No-copyright-message",
+    "links": [
+      {
+        "text": "Tests Directory",
+        "link": "../"
+      }
+    ]
+  }
+}
