@@ -25,7 +25,7 @@ jobs:
           echo "Setting repository_name as '${GITHUB_REPOSITORY#${{ github.repository_owner }}/}'."
           echo "::set-output name=repository_name::${GITHUB_REPOSITORY#${{ github.repository_owner }}/}"
 
-      - uses: fabriciomurta/ragha-build@v1
+      - uses: fabriciomurta/ragha-build@issue-11
         id: ragha-build
         with:
           title: "Coo\"lSt'aj"
