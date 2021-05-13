@@ -1,9 +1,9 @@
 {
-  "input": "../test2",
+  "input": "./",
   "output": ".retype",
 
   "meta": {
-    "title": "Test 003"
+    "title": "Test 3"
   },
 
   "links": [{
@@ -12,7 +12,7 @@
   }],
 
   "footer": {
-    "copyright": "No-copyright-message",
+    "copyright": "No-copyright-message &copy;",
     "links": [
       {
         "text": "Tests Directory",

@@ -1,5 +1,5 @@
 # Test 3.x
 
-If you can read this file from published documentation for Test 003, something went wrong.
+The docs here have been generated using either retype-custom.json, unrelated.txt or extensionless configuration files.
 
-This test consists in checking whether we can place retype.json in a directory and build documentation off another, ultimately building test 2.x.x!
+This test consists on just using non-standard file names as retype.json files.

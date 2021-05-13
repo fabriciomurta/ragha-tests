@@ -28,7 +28,6 @@ jobs:
       - uses: fabriciomurta/ragha-build@issue-11
         id: ragha-build
         with:
-          title: "Coo\"lSt'aj"
           base: "${{ steps.clean-repo-name.outputs.repository_name }}"
           #license: some-test-license
 
@@ -72,9 +71,9 @@ jobs:
 
 # 1
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 1.0: Documentation from test1/ dir wd-based'
+        name: 'Test 1.0: config: test1 dir'
         with:
-          wd: test1
+          config: test1
           base: ragha-tests/test1.0
 
       - uses: fabriciomurta/ragha-github@master
@@ -86,9 +85,9 @@ jobs:
         run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 1.1: Documentation from test1/ dir path-based'
+        name: 'Test 1.1: config: test1/retype.json'
         with:
-          retypejson-path: test1/retype.json
+          config: test1/retype.json
           base: ragha-tests/test1.1
 
       - uses: fabriciomurta/ragha-github@master
@@ -99,11 +98,67 @@ jobs:
       - name: revert git tree to action ref
         run: git checkout ${{ github.sha }}
 
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 1.2: config: ./test1 dir'
+        with:
+          config: ./test1
+          base: ragha-tests/test1.2
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test1.2
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 1.3: config: ./test1/retype.json'
+        with:
+          config: ./test1/retype.json
+          base: ragha-tests/test1.3
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test1.3
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 1.4: config: test1/ dir'
+        with:
+          config: test1/
+          base: ragha-tests/test1.4
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test1.4
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 1.5: config: ./test1/'
+        with:
+          config: test1/retype.json
+          base: ragha-tests/test1.5
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test1.5
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
 # 2
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 2.0.0: Documentation from test2/ dir wd-based'
+        name: 'Test 2.0.0: config: test2 dir'
         with:
-          wd: test2
+          config: test2
           base: ragha-tests/test2.0.0
 
       - uses: fabriciomurta/ragha-github@master
@@ -115,9 +170,9 @@ jobs:
         run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 2.0.1: Documentation from test2/ dir path-based'
+        name: 'Test 2.0.1: config: test2/retype.json'
         with:
-          retypejson-path: test2/retype.json
+          config: test2/retype.json
           base: ragha-tests/test2.0.1
 
       - uses: fabriciomurta/ragha-github@master
@@ -129,9 +184,9 @@ jobs:
         run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 2.1.0: Documentation from test2/test21/ dir wd-based'
+        name: 'Test 2.1.0: config: test2/test21'
         with:
-          wd: test2/test21
+          config: test2/test21
           base: ragha-tests/test2.1.0
 
       - uses: fabriciomurta/ragha-github@master
@@ -143,9 +198,9 @@ jobs:
         run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 2.1.1: Documentation from test1/ dir path-based'
+        name: 'Test 2.1.1: config: test2/test21/retype.json'
         with:
-          retypejson-path: test2/test21/retype.json
+          config: test2/test21/retype.json
           base: ragha-tests/test2.1.1
 
       - uses: fabriciomurta/ragha-github@master
@@ -156,11 +211,67 @@ jobs:
       - name: revert git tree to action ref
         run: git checkout ${{ github.sha }}
 
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.1.2: config: ./test2/test21'
+        with:
+          config: ./test2/test21
+          base: ragha-tests/test2.1.2
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.1.2
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.1.3: config: ./test2/test21/retype.json'
+        with:
+          config: ./test2/test21/retype.json
+          base: ragha-tests/test2.1.3
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.1.3
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.1.4: config: ./test2/test21/'
+        with:
+          config: ./test2/test21/
+          base: ragha-tests/test2.1.4
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.1.4
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 2.1.5: config: ./test1/../test2/test21/'
+        with:
+          config: ./test1/../test2/test21/
+          base: ragha-tests/test2.1.5
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test2.1.5
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
 # 3
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 3.0: Documentation from test1/ dir wd-based'
+        name: 'Test 3.0: config: test3/retype-custom.json'
         with:
-          wd: test3
+          config: test3/retype-custom.json
           base: ragha-tests/test3.0
 
       - uses: fabriciomurta/ragha-github@master
@@ -172,9 +283,9 @@ jobs:
         run: git checkout ${{ github.sha }}
 
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 3.1: Documentation from test1/ dir path-based'
+        name: 'Test 3.1: config: test3/unrelated.txt'
         with:
-          retypejson-path: test3/retype.json
+          config: test3/unrelated.txt
           base: ragha-tests/test3.1
 
       - uses: fabriciomurta/ragha-github@master
@@ -185,15 +296,98 @@ jobs:
       - name: revert git tree to action ref
         run: git checkout ${{ github.sha }}
 
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 3.2: config: test3/extensionless'
+        with:
+          config: test3/extensionless
+          base: ragha-tests/test3.2
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test3.2
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 3.3: config: test3/not-a-doc.md'
+        with:
+          config: test3/not-a-doc.md
+          base: ragha-tests/test3.3
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test3.3
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
 # 4
       - uses: fabriciomurta/ragha-build@issue-2
-        name: 'Test 4.0: Documentation from test4/ dir wd-based'
+        name: 'Test 4.0: config: test1/../test2/test21/../../test4'
         with:
-          wd: test4
+          config: test1/../test2/test21/../../test4
           base: ragha-tests/test4.0
 
       - uses: fabriciomurta/ragha-github@master
         with:
           directory: test4.0
-          retypejson-path: test41/retype.json # change this to just 'test41', reference config by directory
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 4.1: config: ./test4/test41/..'
+        with:
+          config: ./test4/test41/..
+          base: ragha-tests/test4.1
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test4.1
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 4.2: config: ./test4/test41/../'
+        with:
+          config: ./test4/test41/../
+          base: ragha-tests/test4.2
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test4.2
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 4.3: config: ./test4/test41/../retype.json'
+        with:
+          config: ./test4/test41/../retype.json
+          base: ragha-tests/test4.3
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test4.3
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: 'Test 4.4: config: test4/test41/../retype.json'
+        with:
+          config: test4/test41/../retype.json
+          base: ragha-tests/test4.4
+
+      - uses: fabriciomurta/ragha-github@master
+        with:
+          directory: test4.4
           update-branch: true
