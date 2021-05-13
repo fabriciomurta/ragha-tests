@@ -49,7 +49,7 @@ jobs:
           #github-token: ${{ secrets.GITHUB_TOKEN }}
 
   test-issue-2:
-    name: Checks issue-2 (wd/retypejson-path)
+    name: Checks issue-2 (config input)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
