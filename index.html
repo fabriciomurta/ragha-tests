@@ -18,8 +18,6 @@
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-    <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
-
     <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
     <div class="container relative flex items-center justify-between flex-grow pr-6 md:justify-start">
         <!-- Mobile menu button skeleton -->
@@ -90,8 +88,8 @@
 </header>
 
 
-    <div class="container relative flex bg-white">
-        <!-- Sidebar Skeleton -->
+    <div class="relative flex mx-auto bg-white max-w-core">
+        <div class="md:hidden"><!-- Sidebar Skeleton -->
 <div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
 
     <!-- Render this div, if config.showSidebarFilter is `true` -->
@@ -155,18 +153,17 @@
         </div>
     </template>
 </doc-sidebar>
-
+</div>
 
         <div class="flex-grow min-w-0 dark:bg-dark-850">
-            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-            <div class="flex">
-    <div class="flex-grow min-w-0 px-6 md:px-16">
-        <main class="relative pt-6 pb-16">
-            <div class="docs-markdown" id="docs-content">
-                <!-- Rendered if sidebar right is enabled -->
-                <div id="docs-sidebar-right-toggle"></div>
-               
-                <!-- Page content  -->
+            <!-- Render page content -->
+            <div class="flex-grow min-w-0 px-6">
+    <main class="relative pt-6 pb-16">
+        <div class="docs-markdown" id="docs-content">
+            <!-- Rendered if sidebar right is enabled -->
+            <div id="docs-sidebar-right-toggle"></div>
+           
+            <!-- Page content  -->
 <doc-anchor-target id="retype-apps-github-actions-ragha-tests-project" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#retype-apps-github-actions-ragha-tests-project">#</doc-anchor-trigger>
@@ -180,101 +177,290 @@
         <span>Tests directory</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="test-1-0-test-retype-json-in-a-subdirectory-wd">
+<doc-anchor-target id="first-batch-on-test1">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-1-0-test-retype-json-in-a-subdirectory-wd">#</doc-anchor-trigger>
-        <span>1. Test 1.0: test retype.json in a subdirectory (wd)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#first-batch-on-test1">#</doc-anchor-trigger>
+        <span>1. First batch, on <code v-pre>test1/</code></span>
     </h3>
+</doc-anchor-target>
+<doc-anchor-target id="config-test1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test1">#</doc-anchor-trigger>
+        <span>1.0: <code v-pre>config: test1</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test1.0/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by changing working directory into <code v-pre>test1/</code>.</p>
-<p>There should only be the &quot;README for test 1.x&quot; article.</p>
-<doc-anchor-target id="test-1-1-test-retype-json-in-a-subdirectory-retypejson-path">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-1-1-test-retype-json-in-a-subdirectory-retypejson-path">#</doc-anchor-trigger>
-        <span>1. Test 1.1: test retype.json in a subdirectory (retypejson-path)</span>
-    </h3>
+<p>Tests building retype docs by specifying config as simply <code v-pre>test1</code>. It should find the retype.json file therein.</p>
+<p>There should only be the &quot;Test 1.x&quot; article.</p>
+<doc-anchor-target id="config-test1retypejson">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test1retypejson">#</doc-anchor-trigger>
+        <span>1.1: <code v-pre>config: test1/retype,json</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test1.1/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by specifying the path of <code v-pre>test1/retype.json</code>.</p>
-<p>There should only be the &quot;README for test 1.x&quot; article.</p>
-<doc-anchor-target id="test-2-0-0-test-retype-json-in-a-subdirectory-wd">
+<p>Tests building retype docs by specifying config as <code v-pre>test1/retype.json</code>. It should find the retype.json file therein.</p>
+<p>There should only be the &quot;Test 1.x&quot; article.</p>
+<doc-anchor-target id="config-test1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test1">#</doc-anchor-trigger>
+        <span>1.2: <code v-pre>config: ./test1</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test1.2/">Test result</a></li>
+</ul>
+<p>Same as 1.0 above, but prepends a <code v-pre>./</code> to the path.</p>
+<p>There should only be the &quot;Test 1.x&quot; article.</p>
+<doc-anchor-target id="test1retype-json">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#test1retype-json">#</doc-anchor-trigger>
+        <span>1.3: <code v-pre>./test1/retype.json</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test1.3/">Test result</a></li>
+</ul>
+<p>Same as 1.1 above, but prepends a <code v-pre>./</code> to the path.</p>
+<p>There should only be the &quot;Test 1.x&quot; article.</p>
+<doc-anchor-target id="config-test1-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test1-1">#</doc-anchor-trigger>
+        <span>1.4: <code v-pre>config: test1/</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test1.4/">Test result</a></li>
+</ul>
+<p>Same as 1.0 above, but appends a <code v-pre>/</code> to the path.</p>
+<p>There should only be the &quot;Test 1.x&quot; article.</p>
+<doc-anchor-target id="config-test1-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test1-1">#</doc-anchor-trigger>
+        <span>1.5: <code v-pre>config: ./test1/</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test1.5/">Test result</a></li>
+</ul>
+<p>Same as 1.0 above, but wraps the path between <code v-pre>./</code> and <code v-pre>/</code>. A combination of 1.2 and 1.4.</p>
+<p>There should only be the &quot;Test 1.x&quot; article.</p>
+<doc-anchor-target id="second-batch-on-test2-and-test2test21">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-2-0-0-test-retype-json-in-a-subdirectory-wd">#</doc-anchor-trigger>
-        <span>1. Test 2.0.0: test retype.json in a subdirectory (wd)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#second-batch-on-test2-and-test2test21">#</doc-anchor-trigger>
+        <span>2. Second batch, on <code v-pre>test2/</code> and <code v-pre>test2/test21</code></span>
     </h3>
+</doc-anchor-target>
+<doc-anchor-target id="config-test2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test2">#</doc-anchor-trigger>
+        <span>2.0.0: <code v-pre>config: test2</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test2.0.0/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by changing working directory into <code v-pre>test2/</code>.</p>
-<p>There should be the &quot;README for test 2.x&quot; and &quot;...2.1.x&quot; articles.</p>
-<doc-anchor-target id="test-2-0-1-test-retype-json-in-a-subdirectory-path">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-2-0-1-test-retype-json-in-a-subdirectory-path">#</doc-anchor-trigger>
-        <span>1. Test 2.0.1: test retype.json in a subdirectory (path)</span>
-    </h3>
+<p>Equivalent to 1.0 for the <code v-pre>test2</code> directory.</p>
+<p>There should be the &quot;Test 2.x&quot; and &quot;Test 2.1.x&quot; articles.</p>
+<doc-anchor-target id="config-test2retype-json">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test2retype-json">#</doc-anchor-trigger>
+        <span>2.0.1: <code v-pre>config: test2/retype.json</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test2.0.1/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by specifying the path of <code v-pre>test2/retype.json</code>.</p>
-<p>There should be the &quot;README for test 2.x&quot; and &quot;...2.1.x&quot; articles.</p>
-<doc-anchor-target id="test-2-1-0-test-retype-json-in-a-subdirectory-wd">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-2-1-0-test-retype-json-in-a-subdirectory-wd">#</doc-anchor-trigger>
-        <span>1. Test 2.1.0: test retype.json in a subdirectory (wd)</span>
-    </h3>
+<p>Equivalent to 1.1 for the <code v-pre>test2/retype.json</code> file.</p>
+<p>There should be the &quot;Test 2.x&quot; and &quot;...2.1.x&quot; articles.</p>
+<doc-anchor-target id="config-test2test21">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test2test21">#</doc-anchor-trigger>
+        <span>2.1.0: <code v-pre>config: test2/test21</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test2.1.0/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by changing working directory into <code v-pre>test2/test21</code>.</p>
-<p>There should only be the &quot;README for test 2.1.x&quot; article.</p>
-<doc-anchor-target id="test-2-1-1-test-retype-json-in-a-subdirectory-path">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-2-1-1-test-retype-json-in-a-subdirectory-path">#</doc-anchor-trigger>
-        <span>1. Test 2.1.1: test retype.json in a subdirectory (path)</span>
-    </h3>
+<p>Equivalent to 1.0 for the <code v-pre>test2/test21</code> directory. It should skip docs in <code v-pre>test2/</code> dir and elsewhere in the repo!</p>
+<p>There should only be the &quot;Test 2.1.x&quot; article.</p>
+<doc-anchor-target id="config-test2test21retype-json">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test2test21retype-json">#</doc-anchor-trigger>
+        <span>2.1.1: <code v-pre>config: test2/test21/retype.json</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test2.1.1/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by specifying the path of <code v-pre>test2/test21/retype.json</code>.</p>
-<p>There should only be the &quot;README for test 2.1.x&quot; article.</p>
-<doc-anchor-target id="test-3-0-test-retype-json-in-a-subdirectory-wd">
+<p>Equivalent to 1.1 for the <code v-pre>test2/test21/retype.json</code> file. It should skip docs in <code v-pre>test2/</code> dir and elsewhere in the repo!</p>
+<p>There should only be the &quot;Test 2.1.x&quot; article.</p>
+<doc-anchor-target id="config-test2test21">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test2test21">#</doc-anchor-trigger>
+        <span>2.1.2: <code v-pre>config: ./test2/test21</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test2.1.2/">Test result</a></li>
+</ul>
+<p>Same as 2.1.0 above, but prepends a <code v-pre>./</code> to the path.</p>
+<p>There should only be the &quot;Test 2.1.x&quot; article.</p>
+<doc-anchor-target id="config-test2test21retype-json">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test2test21retype-json">#</doc-anchor-trigger>
+        <span>2.1.3: <code v-pre>config: ./test2/test21/retype.json</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test2.1.3/">Test result</a></li>
+</ul>
+<p>Same as 2.1.1 above, but prepends a <code v-pre>./</code> to the path.</p>
+<p>There should only be the &quot;Test 2.1.x&quot; article.</p>
+<doc-anchor-target id="config-test2test21-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test2test21-1">#</doc-anchor-trigger>
+        <span>2.1.4: <code v-pre>config: ./test2/test21/</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test2.1.4/">Test result</a></li>
+</ul>
+<p>Same as 2.1.0 above, but wraps the path between <code v-pre>./</code> and <code v-pre>/</code>. Notice we didn&#39;t make a test which just appends slash to the path in this batch.</p>
+<p>There should only be the &quot;Test 2.1.x&quot; article.</p>
+<doc-anchor-target id="config-test1-test2test21">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test1-test2test21">#</doc-anchor-trigger>
+        <span>2.1.5: <code v-pre>config: ./test1/../test2/test21/</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test2.1.5/">Test result</a></li>
+</ul>
+<p>Uses &quot;upper-level&quot; pathing to the directory containing the project.</p>
+<p>There should only be the &quot;Test 2.1.x&quot; article.</p>
+<doc-anchor-target id="third-batch-on-test3">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-3-0-test-retype-json-in-a-subdirectory-wd">#</doc-anchor-trigger>
-        <span>1. Test 3.0: test retype.json in a subdirectory (wd)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#third-batch-on-test3">#</doc-anchor-trigger>
+        <span>3. Third batch, on <code v-pre>test3/</code></span>
     </h3>
+</doc-anchor-target>
+<doc-anchor-target id="config-test3retype-custom-json">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test3retype-custom-json">#</doc-anchor-trigger>
+        <span>3.0: <code v-pre>config: test3/retype-custom.json</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test3.0/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by changing working directory into <code v-pre>test3/</code>.</p>
-<p>There should be the &quot;README for test 2.x&quot; and &quot;...2.1.x&quot; articles here, test3 points to test2.</p>
-<doc-anchor-target id="test-3-1-test-retype-json-in-a-subdirectory-path">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#test-3-1-test-retype-json-in-a-subdirectory-path">#</doc-anchor-trigger>
-        <span>1. Test 3.1: test retype.json in a subdirectory (path)</span>
-    </h3>
+<p>Builds retype reading settings off the <code v-pre>retype-custom.json</code> file.</p>
+<p>There should be the &quot;Test 3.x&quot; and &quot;not-a-doc&quot; articles. The latter is just retype.json file renamed to a markdown extension.</p>
+<doc-anchor-target id="config-test3unrelated-txt">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test3unrelated-txt">#</doc-anchor-trigger>
+        <span>3.1: <code v-pre>config: test3/unrelated.txt</code></span>
+    </h4>
 </doc-anchor-target>
 <ul>
 <li><a href="test3.1/">Test result</a></li>
 </ul>
-<p>Tests building retype docs by specifying the path of <code v-pre>test3/retype.json</code>.</p>
-<p>There should be the &quot;README for test 2.x&quot; and &quot;...2.1.x&quot; articles here, test3 points to test2.</p>
+<p>Builds retype reading settings off the <code v-pre>unrelated.txt</code> file.</p>
+<p>There should be the &quot;Test 3.x&quot; and &quot;not-a-doc&quot; articles. The latter is just retype.json file renamed to a markdown extension.</p>
+<doc-anchor-target id="config-test3extensionless">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test3extensionless">#</doc-anchor-trigger>
+        <span>3.2: <code v-pre>config: test3/extensionless</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test3.2/">Test result</a></li>
+</ul>
+<p>Builds retype reading settings off the <code v-pre>extensionless</code> file.</p>
+<p>There should be the &quot;Test 3.x&quot; and &quot;not-a-doc&quot; articles. The latter is just retype.json file renamed to a markdown extension.</p>
+<doc-anchor-target id="config-test3not-a-doc-md">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test3not-a-doc-md">#</doc-anchor-trigger>
+        <span>3.3: <code v-pre>config: test3/not-a-doc.md</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test3.3/">Test result</a></li>
+</ul>
+<p>Builds retype reading settings off the <code v-pre>not-a-doc.md</code> file.</p>
+<p>There should be the &quot;Test 3.x&quot; and &quot;not-a-doc&quot; articles. The latter is just retype.json file renamed to a markdown extension.</p>
+<doc-anchor-target id="fourth-batch-on-test4">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fourth-batch-on-test4">#</doc-anchor-trigger>
+        <span>4. Fourth batch, on <code v-pre>test4/</code></span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="config-test1-test2test21-test4">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test1-test2test21-test4">#</doc-anchor-trigger>
+        <span>4.0: <code v-pre>config: test1/../test2/test21/../../test4</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test4.0/">Test result</a></li>
+</ul>
+<p>Uses a bit unusal relative path combination (that still, is valid). The config file, in turn, will build docs from its inner <code v-pre>test41/</code> dir.</p>
+<p>There should only be the &quot;Test 4.1.x&quot; article.</p>
+<doc-anchor-target id="config-test4test41">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test4test41">#</doc-anchor-trigger>
+        <span>4.1: <code v-pre>config: ./test4/test41/..</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test4.1/">Test result</a></li>
+</ul>
+<p>Uses a bit unusal relative path combination (that still, is valid). The config file, in turn, will build docs from its inner <code v-pre>test41/</code> dir.</p>
+<p>There should only be the &quot;Test 4.1.x&quot; article.</p>
+<doc-anchor-target id="config-test4test41-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test4test41-1">#</doc-anchor-trigger>
+        <span>4.2: <code v-pre>config: ./test4/test41/../</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test4.2/">Test result</a></li>
+</ul>
+<p>Uses a bit unusal relative path combination (that still, is valid). The config file, in turn, will build docs from its inner <code v-pre>test41/</code> dir.</p>
+<p>There should only be the &quot;Test 4.1.x&quot; article.</p>
+<doc-anchor-target id="config-test4test41-retype-json">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test4test41-retype-json">#</doc-anchor-trigger>
+        <span>4.3: <code v-pre>config: ./test4/test41/../retype.json</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test4.3/">Test result</a></li>
+</ul>
+<p>Uses a bit unusal relative path combination (that still, is valid) to the actual file. The config file, in turn, will build docs from its inner <code v-pre>test41/</code> dir.</p>
+<p>There should only be the &quot;Test 4.1.x&quot; article.</p>
+<doc-anchor-target id="config-test4test41-retype-json">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#config-test4test41-retype-json">#</doc-anchor-trigger>
+        <span>4.4: <code v-pre>config: test4/test41/../retype.json</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><a href="test4.4/">Test result</a></li>
+</ul>
+<p>Uses a bit unusal relative path combination (that still, is valid) to the actual file. The config file, in turn, will build docs from its inner <code v-pre>test41/</code> dir.</p>
+<p>There should only be the &quot;Test 4.1.x&quot; article.</p>
 
-    
-                <!-- Required only on API pages -->
-                <doc-toolbar-member-filter-no-results />
-            </div>
 
-            
+            <!-- Required only on API pages -->
+            <doc-toolbar-member-filter-no-results />
+        </div>
+
+        
 <nav class="flex mt-14">
     <div class="w-1/2">
     </div>
@@ -291,35 +477,36 @@
 </nav>
 
 
-        </main>
+    </main>
+</div>
 
-        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-            <footer class="flex flex-wrap items-center justify-between">
-    <div>
-        <ul class="flex flex-wrap items-center text-sm">
+        </div>
+    </div>
+
+    <div class="border-t dark:border-dark-650">
+        <div class="max-w-core mx-auto px-6 py-6">
+            <footer>
+    <div class="flex flex-wrap items-center justify-between">
+        <div class="pt-3">
+            <ul class="flex flex-wrap items-center text-sm">
 </ul>
 
+        </div>
+        <div class="docs-copyright pt-3 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>No-copyright-message</p>
+</div>
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>No-copyright-message</p>
+
+    <div class="flex sm:justify-center"><a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
 </div>
 </footer>
-
-        </div>
-    </div>
-    
-    <!-- Rendered if sidebar right is enabled -->
-    <!-- Sidebar right skeleton-->
-    <div v-cloak class="fixed top-0 bottom-0 right-0 transform translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:flex-shrink-0 lg:pt-6 lg:transform-none lg:w-56 lg:z-0 md:w-72 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
-        <div class="pl-5">
-            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-        </div>
-    </div>
-    
-    <!-- User should be able to hide sidebar right -->
-    <doc-sidebar-right v-cloak></doc-sidebar-right>
-</div>
 
         </div>
     </div>
