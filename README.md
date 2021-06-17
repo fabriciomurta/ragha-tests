@@ -18,7 +18,7 @@ Tests building retype docs by specifying config as simply `test1`. It should fin
 
 There should only be the "Test 1.x" article.
 
-#### 1.1: `config: test1/retype,json`
+#### 1.1: `config: test1/retype.json`
 
 - [Test result](test1.1/)
 
