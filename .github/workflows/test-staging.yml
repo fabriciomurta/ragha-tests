@@ -391,3 +391,127 @@ jobs:
         with:
           directory: test4.4
           update-branch: true
+
+  test-git-ftp:
+    name: Checks git-ftp action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: test-gf-01 - Builds root retype project
+        with:
+          base: test-gf-01
+
+      - uses: fabriciomurta/ragha-git-ftp@main
+        name: test-gf-01 - Uploads root built project using git-ftp into /test-gf-01
+        with:
+          branch: test-gf
+          directory: test-gf-01
+          ftp-host: ${{ secrets.ARVIXE_FTP_HOST }}
+          ftp-pass: ${{ secrets.ARVIXE_FTP_PASS }}
+          # the setup account has / as the http root
+          ftp-root: /test-gf-01
+          ftp-user: ${{ secrets.ARVIXE_FTP_USER }}
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: test-gf-02 - Builds the 'test1' retype project
+        with:
+          base: test-gf-02
+          config: test1/retype.json
+
+      - uses: fabriciomurta/ragha-git-ftp@main
+        name: test-gf-02 - Uploads test1 built project using git-ftp into /test-gf-02
+        with:
+          branch: test-gf
+          directory: test-gf-02
+          ftp-host: ${{ secrets.ARVIXE_FTP_HOST }}
+          ftp-pass: ${{ secrets.ARVIXE_FTP_PASS }}
+          # the setup account has / as the http root
+          ftp-root: /test-gf-02
+          ftp-user: ${{ secrets.ARVIXE_FTP_USER }}
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: test-gf-03 - Builds the 'test2' retype project
+        with:
+          base: test-gf-03
+          config: test2/retype.json
+
+      - uses: fabriciomurta/ragha-git-ftp@main
+        name: test-gf-03 - Uploads test2 built project using git-ftp into /test-gf-03
+        with:
+          #directory: / # place in specified branch's root
+          branch: retype-test-gf-03
+          ftp-host: ${{ secrets.ARVIXE_FTP_HOST }}
+          ftp-pass: ${{ secrets.ARVIXE_FTP_PASS }}
+          # the setup account has / as the http root
+          ftp-root: /test-gf-03
+          ftp-user: ${{ secrets.ARVIXE_FTP_USER }}
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: test-gf-04 - Builds the 'test1' retype project
+        with:
+          base: test-gf-04
+          config: test1/retype.json
+
+      - uses: fabriciomurta/ragha-github@master
+        name: test-gf-04 - Push built page to a branch as if it were a GitHub-Pages one
+        with:
+          branch: test-gf-04
+          update-branch: true
+
+      - uses: fabriciomurta/ragha-git-ftp@main
+        name: test-gf-04 - Uploads test1 built project using git-ftp into /test-gf-04
+        with:
+          #directory: / # place in specified branch's root
+          branch: test-gf-04
+          ftp-host: ${{ secrets.ARVIXE_FTP_HOST }}
+          ftp-pass: ${{ secrets.ARVIXE_FTP_PASS }}
+          # the setup account has / as the http root
+          ftp-root: /test-gf-04
+          ftp-user: ${{ secrets.ARVIXE_FTP_USER }}
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+      - uses: fabriciomurta/ragha-build@issue-2
+        name: test-gf-05 - Builds the 'test3' retype project
+        with:
+          base: test-gf-05
+          config: test3/retype-custom.json
+
+      - uses: fabriciomurta/ragha-github@master
+        name: test-gf-05 - Calls github-pages on specific dir within default test branch
+        with:
+          branch: test-gf
+          directory: test-gf-05
+          update-branch: true
+
+      - uses: fabriciomurta/ragha-git-ftp@main
+        name: test-gf-05 - Calls git-ftp on same dir/branch as above
+        with:
+          branch: test-gf
+          directory: test-gf-05
+          ftp-host: ${{ secrets.ARVIXE_FTP_HOST }}
+          ftp-pass: ${{ secrets.ARVIXE_FTP_PASS }}
+          # the setup account has / as the http root
+          ftp-root: /test-gf-05
+          ftp-user: ${{ secrets.ARVIXE_FTP_USER }}
+          update-branch: true
