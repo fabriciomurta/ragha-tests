@@ -2,7 +2,7 @@
   "input": "./",
   "output": ".retype",
 
-  "meta": {
+  "branding": {
     "title": "Test 002"
   },
 
