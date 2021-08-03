@@ -414,6 +414,22 @@ jobs:
           directory: test5-hub
           update-branch: true
 
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+# 6
+      - uses: fabriciomurta/ragha-build@v1
+        name: 'Test 6: Build retype site using retype.yml as config'
+        with:
+          config: test6
+          base: ragha-tests/test6
+
+      - uses: fabriciomurta/ragha-github@v1
+        name: 'Test 6: Push the built "retype-yaml" project to GitHub'
+        with:
+          directory: test6
+          update-branch: true
+
   test-git-ftp:
     name: Checks git-ftp action
     runs-on: ubuntu-latest

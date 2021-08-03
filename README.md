@@ -205,3 +205,9 @@ There should only be the "Test 4.1.x" article.
 - [Test result](test5-hub/)
 
 Explores issues with retype nested websites and turbo links left sidebar refreshing.
+
+#### 6: Site with Retype.yml instead of json.
+
+- [Test result](test6/)
+
+Simple site (based on test1) but using `retype.yml` as config file.

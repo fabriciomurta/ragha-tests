@@ -1,0 +1,14 @@
+input: "./"
+output: ".retype"
+branding:
+  title: "Test 006"
+links:
+  -
+    text: "Tests directory"
+    link: "../"
+footer:
+  copyright: "No-copyright-message"
+  links:
+    -
+      text: "Tests Directory"
+      link: "../"
