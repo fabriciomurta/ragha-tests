@@ -1,0 +1,25 @@
+{
+  "input": "./",
+  "output": ".retype",
+
+  "branding": {
+    "title": "Hub Site"
+  },
+
+  "footer": {
+    "copyright": "No-copyright-message",
+    "links": [{
+      "text": "Site 1 (nesting bug)",
+      "link": "resources/site1/"
+    }, {
+      "text": "Site 2 (nesting bug)",
+      "link": "resources/site2/"
+    }, {
+      "text": "Non-retype Site 3 (nesting bug)",
+      "link": "resources/site3/"
+    }, {
+      "text": "Intermediate Site (non-retype, nesting bug)",
+      "link": "resources/"
+    }]
+  }
+}

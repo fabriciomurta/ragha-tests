@@ -1,0 +1,31 @@
+{
+  "input": "./",
+  "output": "../hub/resources/site2",
+  "base": "resources/site2",
+
+  "branding": {
+    "title": "Test 5 - Site 2"
+  },
+
+  "links": [{
+    "text": "Test 5 - Site 1",
+    "link": "/../site1"
+  }],
+
+  "footer": {
+    "copyright": "No-copyright-message",
+    "links": [{
+      "text": "Test 5 - Site 1",
+      "link": "/../site1"
+    }, {
+      "text": "Test 5 - Site 1 '",
+      "link": "../site1"
+    }, {
+      "text": "Hub (nesting bug)",
+      "link": "/../.."
+    }, {
+      "text": "Intermediate",
+      "link": "/.."
+    }]
+  }
+}
