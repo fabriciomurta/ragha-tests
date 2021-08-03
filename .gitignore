@@ -1,2 +1,4 @@
 *.zip
 config*.js
+**/.retype/**
+test5/hub/resources/**
