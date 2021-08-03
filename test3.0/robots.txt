@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: /ragha-tests/test3.0/sitemap.xml.gz
