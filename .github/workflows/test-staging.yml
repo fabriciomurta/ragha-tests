@@ -48,8 +48,8 @@ jobs:
           update-branch: true
           #github-token: ${{ secrets.GITHUB_TOKEN }}
 
-  test-issue-2:
-    name: Checks issue-2 (config input)
+  general-tests:
+    name: Runs several random retype build tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -390,6 +390,28 @@ jobs:
       - uses: fabriciomurta/ragha-github@v1
         with:
           directory: test4.4
+          update-branch: true
+
+      - name: revert git tree to action ref
+        run: git checkout ${{ github.sha }}
+
+# 5
+      - name: 'Test 5.1: Assemble project batch'
+        shell: bash
+        run: |
+          cd test5
+          ./run.sh
+
+      - uses: fabriciomurta/ragha-build@v1
+        name: 'Test 5.2: Rebuild "hub" project using build action'
+        with:
+          config: test5/hub
+          base: ragha-tests/test5-hub
+
+      - uses: fabriciomurta/ragha-github@v1
+        name: 'Test 5.2.1: Push the built "hub" project to GitHub'
+        with:
+          directory: test5-hub
           update-branch: true
 
   test-git-ftp:

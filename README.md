@@ -199,3 +199,9 @@ There should only be the "Test 4.1.x" article.
 Uses a bit unusal relative path combination (that still, is valid) to the actual file. The config file, in turn, will build docs from its inner `test41/` dir.
 
 There should only be the "Test 4.1.x" article.
+
+#### 5: Nested Retype websites
+
+- [Test result](test5-hub/)
+
+Explores issues with retype nested websites and turbo links left sidebar refreshing.
