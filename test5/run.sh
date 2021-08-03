@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# disabling this enables headless / CI runs.
+enable_watch=false
+
 function fail() {
  if [ ! -z "${1}" ]; then
   >&2 echo "error: ${1}"
@@ -73,4 +76,6 @@ if [ -e "hub/.retype" ]; then
  echo "done."
 fi
 
-"${retype_cmd[@]}" watch hub
+if ${enable_watch}; then
+ "${retype_cmd[@]}" watch hub
+fi
