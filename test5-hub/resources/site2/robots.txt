@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: /resources/site2/sitemap.xml.gz
