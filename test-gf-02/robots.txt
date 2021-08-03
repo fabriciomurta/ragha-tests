@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: /test-gf-02/sitemap.xml.gz
