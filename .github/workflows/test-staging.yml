@@ -27,6 +27,8 @@ jobs:
 
       - uses: fabriciomurta/ragha-build@main
         id: ragha-build
+        with:
+          license: ${{ secrets.RETYPE_LICENSE_KEY }}
 
       - shell: bash
         env:
