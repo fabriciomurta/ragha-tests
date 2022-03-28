@@ -11,13 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 5.0.x
-
-      #- shell: bash
-      #  run: sudo cp -p retype-stub.sh /usr/local/bin/retype
-
       - name: Sets a variable with the repository name, stripping out owner/organization
         id: clean-repo-name
         shell: bash
@@ -25,11 +18,14 @@ jobs:
           echo "Setting repository_name as '${GITHUB_REPOSITORY#${{ github.repository_owner }}/}'."
           echo "::set-output name=repository_name::${GITHUB_REPOSITORY#${{ github.repository_owner }}/}"
 
-      - uses: retypeapp/action-build@v1
+      - uses: retypeapp/action-build@v1-warn
         id: retypeapp-action-build
         with:
           title: "Coo\"lPr'oj"
           base: "${{ steps.clean-repo-name.outputs.repository_name }}"
+
+      - run: |
+          retype --version
 
       - uses: actions/upload-artifact@v2
         with:
